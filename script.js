@@ -13,11 +13,10 @@ $(function() {
         var self = this;
 
         this.id = randomString();
-        this.name = name;
+        this.name = name || "Empty column";
         this.$element = createColumn();
 
         function createColumn() {
-
 
             var $column = $('<div>').addClass('column col-xs-3');
             var $columnTitle = $('<h2>').addClass('column-title').text(self.name);
@@ -28,8 +27,9 @@ $(function() {
             $columnDelete.click(function() {
                 self.removeColumn();
             });
+
             $columnAddCard.click(function(event) {
-                self.addCard(new Card(prompt("Enter the name of the card")));
+                self.addCard(new Card(prompt("Enter the card content")));
             });
 
 
@@ -69,7 +69,7 @@ $(function() {
                 self.removeCard();
             });
 
-
+            
             $card.append($cardDescription)
                 .append($cardDelete);
             return $card;
