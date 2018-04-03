@@ -12,7 +12,7 @@ body {
 .title {
     display: flex;
     flex-direction: column;
-    padding:40px 50px;
+    padding:40px 50px 0 50px;
     h1 {
         font-size: $bigtitle;
         display: flex;
@@ -50,7 +50,7 @@ body {
         color:white;
         background-color: transparent;
         border:$standard-border;
-        margin:30px;
+        margin:10px 30px 30px 30px;
         font-size: $bigtitle;
         &:focus {
             outline:0;
@@ -128,9 +128,9 @@ ul {
     height:128px;
     img {
         animation: MoveRightLeft 60s linear infinite;
-        position: fixed;
+        position: absolute;
         left: 0;
-        bottom: 0;
+        
     }
 }
 @keyframes MoveRightLeft {
