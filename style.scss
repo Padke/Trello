@@ -103,6 +103,7 @@ ul {
     display: table;
     li {
         padding-left: 1.5em;
+        cursor: -webkit-grab;
         &:before {
             position: absolute;
             content: "\002764";
@@ -116,16 +117,27 @@ ul {
 .add-card {
     font-size: 16px;
 }
-
-card-placeholder {
-    border:1px dashed white;
-}
-
 .column-card-list {
     min-height: 150px;
     min-width: 150px;
     margin: 20px 0 0 20px;
 }
-.card-placeholder {
-    background-color:red;
+
+.container {
+    width:90%;
+    height:128px;
+    img {
+        animation: MoveRightLeft 60s linear infinite;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+    }
+}
+@keyframes MoveRightLeft {
+  0%, 100% {
+    left: 0;
+  }
+  50% {
+    left: 80%;
+  }
 }
