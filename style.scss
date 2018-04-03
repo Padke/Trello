@@ -1,0 +1,119 @@
+$bigtitle:32px;
+$smolltitle:16px;
+$normalfont:12px;
+
+$standard-border:3px solid white;
+
+body {
+    background-color:black !important;
+    color:white !important;
+    font-family: 'Press Start 2P', cursive !important;
+}
+.title {
+    display: flex;
+    flex-direction: column;
+    padding:40px 50px;
+    h1 {
+        font-size: $bigtitle;
+        display: flex;
+        align-self: center;
+    }
+    h3 {
+        font-size: $smolltitle;
+        display: flex;
+        align-self: center;
+        overflow: hidden;
+        border-right: .15em solid white;
+        white-space: nowrap;
+        margin: 0 auto;
+        letter-spacing: .15em;
+        animation: typing 6s steps(50) 1s 1 normal both,
+            blinkTextCursor 500ms steps(50) infinite normal;
+    }
+}
+
+@keyframes typing {
+    from { width: 0; }
+    to { width: 870px; }
+}
+
+@keyframes blink-caret{
+    from{border-right-color: rgba(255,255,255,.75);}
+    to{border-right-color: transparent;}
+}
+.add-col {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    .create-column {
+        color:white;
+        background-color: transparent;
+        border:$standard-border;
+        margin:30px;
+        font-size: $bigtitle;
+        &:focus {
+            outline:0;
+        }
+        &:hover {
+            -webkit-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+            -moz-box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+            box-shadow: 0px 0px 10px 0px rgba(255,255,255,1);
+            cursor: pointer;
+        }
+    }
+}
+.column-container {
+    width: 100%;
+
+    float: left;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    .column {
+        border:2px solid;
+        max-width: 300px;
+        margin-bottom: 30px;
+        padding-bottom:10px;
+    }
+    .column-title {
+        font-size: $smolltitle;
+        text-align: center;
+    }
+}
+.btn-delete-card, .btn-delete-column, .add-card {
+    border: none;
+    font-size: $normalfont;
+    background-color: transparent;
+}
+.btn-delete-column {
+    position: absolute;
+    top:0;
+    right:0;
+    color:#950909;
+}
+.btn-delete-card {
+    color:#93731b;
+    font-size: $normalfont;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    display: table;
+    li {
+        padding-left: 1.5em;
+        &:before {
+            position: absolute;
+            content: "\002764";
+            display: inline-block;
+            color:red;
+            font-size:18px;
+            margin-left: -1.5em;
+        }
+    }
+}
+.add-card {
+    font-size: 16px;
+
+}

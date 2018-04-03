@@ -19,12 +19,11 @@ $(function() {
         function createColumn() {
 
 
-            var $column = $('<div>').addClass('column');
+            var $column = $('<div>').addClass('column col-xs-3');
             var $columnTitle = $('<h2>').addClass('column-title').text(self.name);
             var $columnCardList = $('<ul>').addClass('column-card-list');
-            var $columnDelete = $('<button>').addClass('btn-delete').text('x');
-            var $columnAddCard = $('<button>').addClass('add-card').text('Add a card');
-
+            var $columnAddCard = $('<button>').addClass('add-card').text('[+]');
+            var $columnDelete = $('<button>').addClass('btn-delete-column').text('[X]');
 
             $columnDelete.click(function() {
                 self.removeColumn();
@@ -63,7 +62,7 @@ $(function() {
 
             var $card = $('<li>').addClass('card');
             var $cardDescription = $('<p>').addClass('card-description').text(self.description);
-            var $cardDelete = $('<button>').addClass('btn-delete').text('x');
+            var $cardDelete = $('<button>').addClass('btn-delete-card').text('[X DELETE]');
 
 
             $cardDelete.click(function(){
@@ -71,8 +70,8 @@ $(function() {
             });
 
 
-            $card.append($cardDelete)
-                .append($cardDescription);
+            $card.append($cardDescription)
+                .append($cardDelete);
             return $card;
         }
 
@@ -127,12 +126,3 @@ $(function() {
     doingColumn.addCard(card2);
 
 });
-
-
-
-
-
-
-
-
-
