@@ -128,7 +128,7 @@ ul {
     height:128px;
     img {
         animation: MoveRightLeft 60s linear infinite;
-        position: absolute;
+        position: fixed;
         left: 0;
         bottom: 0;
     }
